@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 
 fps = 60
 
-last_img = np.array(Image.new('RGB', (1000,1000), color = 'black'))
+last_img = np.array(Image.new('RGB', (1000,1000), color = 'white'))
 
 total_diff = np.ndarray((1000,1000,3))
 total_diff.fill(0.0)
