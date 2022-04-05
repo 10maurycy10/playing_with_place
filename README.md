@@ -6,6 +6,10 @@ They all read input for imadges with names piped in:
 
     find /path/to/place/captures | python3 total.py
 
+Thanks to #ProstoSanja for the data that made this possible
+
+![Heatmap](total.png)
+
 ### Note on sizing
 
 The scripts need 1000x1000 imadges, so you may want to run them multaple times and combine the output
