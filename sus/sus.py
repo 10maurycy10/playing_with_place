@@ -16,6 +16,10 @@ from PIL import Image, ImageDraw
 #  1 1
 
 suses = [
+    # 111
+    # 122
+    # 111
+    # 1 1
     [
         [1,1,1],
         [1,2,2],
@@ -23,17 +27,25 @@ suses = [
         [1,0,1]
     
     ],
+    # 1111
+    # 1122
+    #  111
+    #  1 1
     [
         [1,1,1,1],
         [1,1,2,2],
         [0,1,1,1],
-        [0,1,0,1]
+        [3,1,5,1]
     ],
+    #  111
+    # 1122
+    # 1111
+    #  1 1
     [
         [0,1,1,1],
         [1,1,2,2],
         [1,1,1,1],
-        [0,1,0,1]
+        [3,1,4,1]
     ]
 ]
 
@@ -60,13 +72,13 @@ def sustest(x, y, sus):
         for susy in range(len(sus[susx])):
             img_color_idx = img[x + susx][y + susy]
             sus_idx = sus[susx][susy]
-            if sus_idx != 0:
-                if buf[sus_idx] == None:
-                    buf[sus_idx] = img_color_idx
-                else:
-                    if img_color_idx != buf[sus_idx]:
-                        #print("Regecting sus at " + str(x) + "," + str(y) + " is " + str(img_color_idx) + " should be " + str(buf[sus_idx]))
-                        return False
+            #if sus_idx != 0:
+            if buf[sus_idx] == None:
+                buf[sus_idx] = img_color_idx
+            else:
+                if img_color_idx != buf[sus_idx]:
+                    #print("Regecting sus at " + str(x) + "," + str(y) + " is " + str(img_color_idx) + " should be " + str(buf[sus_idx]))
+                    return False
     #print(buf)
     # Ensure buffer has no duplicats, we dont want to classify empty space as sus
     for i in range(len(buf)):
